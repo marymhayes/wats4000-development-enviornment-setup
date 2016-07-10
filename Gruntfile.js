@@ -11,11 +11,12 @@
 module.exports = function (grunt) {
 
   // Time how long tasks take. Can help when optimizing build times
-  require('time-grunt')(grunt);
+  require('load-grunt-tasks')(grunt);
 
   // Automatically load required grunt tasks
   require('jit-grunt')(grunt, {
     useminPrepare: 'grunt-usemin'
+    buildcontrol: 'grunt-build-control'
   });
 
   // Configurable paths
@@ -29,6 +30,22 @@ module.exports = function (grunt) {
 
     // Project settings
     config: config,
+
+    buildcontrol: {
+      options: {
+        dir: 'dist',
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+      },
+
+      pages: {
+        options: {
+          remote: 'git@github.com:marymhayes/wats4000-development-enviornment-setup.git',
+          branch: 'gh-pages'
+        }
+      }
+    },
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
