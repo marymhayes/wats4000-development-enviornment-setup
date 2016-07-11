@@ -1,3 +1,11 @@
+// ******** Countinued to get error message: Loading "Gruntfile.js" tasks...ERROR
+// ******** >> SyntaxError: Unexpected identifier
+// ******** Warning: Task "buildcontrol" not found. Use --force to continue.
+// ******** Aborted due to warnings.
+// ******** Ran git fetch and pushed changes to main branch manually
+
+
+
 // Generated on 2016-06-26 using
 // generator-webapp 1.1.2
 'use strict';
@@ -12,6 +20,12 @@ module.exports = function (grunt) {
 
   // Time how long tasks take. Can help when optimizing build times
   require('load-grunt-tasks')(grunt);
+
+// ******* Trying to get 'grunt buildcontrol' to work, so changed
+// ******* from require('time-grunt')(grunt); as per grunt-build-control ReadMe.
+
+
+
 
   // Automatically load required grunt tasks
   require('jit-grunt')(grunt, {
@@ -31,6 +45,7 @@ module.exports = function (grunt) {
     // Project settings
     config: config,
 
+// ******** Went through Options in ReadMe to match code, couldn't find discrepancy.
     buildcontrol: {
       options: {
         dir: 'dist',
@@ -41,6 +56,8 @@ module.exports = function (grunt) {
 
       pages: {
         options: {
+// ******** 'grunt buildcontrol' didn't work, double-checked repo URL, was missing -setup.
+// ******** Saved changes and retried, got same error message.
           remote: 'git@github.com:marymhayes/wats4000-development-enviornment-setup.git',
           branch: 'gh-pages'
         }
