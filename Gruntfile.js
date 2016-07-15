@@ -8,7 +8,7 @@
 
 // Generated on 2016-06-26 using
 // generator-webapp 1.1.2
-'use strict';
+"use strict";
 
 // # Globbing
 // for performance reasons we're only matching one level down:
@@ -19,7 +19,7 @@
 module.exports = function (grunt) {
 
   // Time how long tasks take. Can help when optimizing build times
-  require('load-grunt-tasks')(grunt);
+  require('time-grunt')(grunt);
 
 // ******* Trying to get 'grunt buildcontrol' to work, so changed
 // ******* from require('time-grunt')(grunt); as per grunt-build-control ReadMe.
@@ -29,7 +29,7 @@ module.exports = function (grunt) {
 
   // Automatically load required grunt tasks
   require('jit-grunt')(grunt, {
-    useminPrepare: 'grunt-usemin'
+    useminPrepare: 'grunt-usemin',
     buildcontrol: 'grunt-build-control'
   });
 
